@@ -94,6 +94,10 @@
     <Compile Include="Migrations\202004171434489_CategoryMigration.Designer.cs">
       <DependentUpon>202004171434489_CategoryMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004171458165_AnotherCategoryMigration.cs" />
+    <Compile Include="Migrations\202004171458165_AnotherCategoryMigration.Designer.cs">
+      <DependentUpon>202004171458165_AnotherCategoryMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004171434489_CategoryMigration.resx">
       <DependentUpon>202004171434489_CategoryMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004171458165_AnotherCategoryMigration.resx">
+      <DependentUpon>202004171458165_AnotherCategoryMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
-﻿using ElevenNote.Services;
+﻿using ElevenNote.Models;
+using ElevenNote.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,49 @@ namespace ElevenNote.WebAPI.Controllers
             CategoryService categoryService = CreateCategoryService();
             var categories = categoryService.GetCategories();
             return Ok(categories);
+        }
+
+        public IHttpActionResult Get(int id)
+        {
+            CategoryService categoryService = CreateCategoryService();
+            var category = categoryService.GetCategoryById(id);
+            return Ok(category);
+        }
+
+        public IHttpActionResult Post(CategoryCreate category)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateCategoryService();
+
+            if (!service.CreateCategory(category))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Put(CategoryEdit category)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateCategoryService();
+
+            if (!service.UpdateCategory(category))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateCategoryService();
+
+            if (!service.DeleteCategory(id))
+                return InternalServerError();
+
+            return Ok();
         }
     }
 }

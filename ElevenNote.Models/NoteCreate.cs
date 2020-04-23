@@ -17,8 +17,6 @@ namespace ElevenNote.Models
         public string Title { get; set; }
         [Required]
         public int CategoryId { get; set; }
-        [ForeignKey(nameof(CategoryId))]
-        public virtual Category category { get; set; }
         public string Content { get; set; }
     }
 }

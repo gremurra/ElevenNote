@@ -21,9 +21,12 @@ namespace ElevenNote.Data
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
-        [Required]
+        [ForeignKey(nameof(Category))]
         public int CategoryId { get; set; }
-        [ForeignKey(nameof(CategoryId))]
-        public virtual Category category { get; set; }
+        public virtual Category Category { get; set; }
+        //one - to - many relationship : One category can have many notes
+        //the foreign key is the link between the two classes
+        //virtual: telling the computer that the foreign key is there
+        //Entity Framework knows that the two Category properties are together
     }
 }

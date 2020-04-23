@@ -13,6 +13,8 @@ namespace ElevenNote.Data
         [Key]
         public int CategoryId { get; set; }
         [Required]
+        [Display(Name ="Category Name")]
         public string CategoryName { get; set; }
+        //public ICollection<Note> Notes {get; set;}
     }
 }
